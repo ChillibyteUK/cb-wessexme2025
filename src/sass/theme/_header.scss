@@ -1,0 +1,46 @@
+#wrapper-navbar {
+    padding-top: 0.5rem;
+    background-color: white;
+
+    transition: transform 0.3s ease-in-out;
+    &.hide {
+        transform: translateY(-140px);
+    }
+
+
+    a {
+        color: var(--col-blue-400);
+        &:hover {
+            color: var(--col-burgundy-400);
+        }
+    }
+
+    #top-nav {
+        font-size: var(--fs-300);
+        .fa-brands {
+            font-size: var(--fs-400);
+        }
+    }
+
+    #primaryNav {
+        font-weight: var(--fw-600);
+    }
+
+    ul.navbar-nav {
+        gap: 1rem;
+    }
+
+    .navbar-brand {
+        background-image: url(../img/watertite-logo.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top left;
+        width: 225px;
+        height: 90px;
+        margin-right: 0;
+    }
+
+    .current-menu-item > .nav-link {
+        color: var(--col-burgundy-400);
+    }
+}

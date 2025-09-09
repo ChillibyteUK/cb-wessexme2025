@@ -1,0 +1,49 @@
+footer {
+    font-size: var(--fs-300);
+    // background-color: var(--col-grey-200);
+    // color: var(--col-grey-400);
+    background-color: var(--col-blue-400);
+    color: white;
+    a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            color: var(--col-burgundy-400);
+        }
+    }
+    p {
+        margin-bottom: 0.25rem;
+    }
+    .footer {
+        font-weight: var(--fw-300);
+        border-bottom: 1px solid hsl( var(--hsl-grey-400), 0.8);
+        &__heading {
+            text-transform: uppercase;
+            font-weight: var(--fw-600);
+            margin-bottom: 0.5rem;
+        }
+        a[target=_blank]::after {
+            content: "" !important;
+        }
+        .fa-brands {
+            font-size: 1.6rem;
+        }
+        .menu {
+            padding-inline-start: 0;
+            list-style-type: none;
+        }
+        &__logo {
+            max-width: 200px;
+        }
+    }
+    .colophon {
+        font-size: var(--fs-200);
+    }
+    .cb {
+        content: url(../img/cb.png);
+        transition: opacity 300ms ease;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

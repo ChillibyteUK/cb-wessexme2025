@@ -1,0 +1,71 @@
+.services_nav {
+    background-color: var(--col-grey-200);
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        
+        &__card {
+            width: max(19%,240px);
+            flex-grow: 1;
+            text-decoration: none;
+            color: var(--color);
+            padding: 1rem 0.5rem 0.5rem 0.5rem;
+            h3 {
+                min-height: 5rem;
+                max-width: 14ch;
+                margin-bottom: 0;
+            }
+            p {
+                min-height: 6rem;
+            }
+            .icon_container {
+                aspect-ratio: 1 / 1;
+                width: 50%;
+                max-width: 100px;
+                margin-left: auto;
+                margin-bottom: 1rem;
+                overflow: hidden;
+                display: flex;
+                align-content: center;
+                img {
+                    aspect-ratio: 1 / 1;
+                    width: 75%;
+                    max-width: 90px;
+                    margin: auto;
+                    object-fit: contain;
+                    object-position: center;
+                    transition: transform 300ms ease;
+                    transform-origin: center;
+                }
+            }
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+
+            &:nth-of-type(1) {
+                background-color: var(--col-green-900);
+                color: white;
+            }
+            &:nth-of-type(2) {
+                background-color: var(--col-green-400);
+                color: white;
+            }
+            &:nth-of-type(3) {
+                background-color: var(--col-green-200);
+                color: var(--col-green-900);
+            }
+            &:nth-of-type(4) {
+                background-color: var(--col-green-300);
+                color: var(--col-green-900);
+            }
+            &:nth-of-type(5) {
+                background-color: var(--col-yellow-400);
+                color: var(--col-green-900);
+            }
+
+        }
+    }
+}

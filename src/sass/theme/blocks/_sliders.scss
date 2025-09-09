@@ -1,0 +1,29 @@
+.clients {
+    &__slider {
+        display: flex;
+        align-items: center;
+        .logo {
+            display: grid;
+            place-content: center;
+            padding-inline: 1rem;
+            min-height: 160px;
+            img {
+                margin-inline: 1rem;
+                aspect-ratio: 1 / 1;
+                width: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    }
+}
+
+.slick-arrow {
+    cursor: pointer;
+    color: var(--col-blue-400);
+    margin-inline: 1rem;
+    transition: color 300ms ease-out;
+    &:hover {
+        color: var(--col-burgundy-400);
+    }
+}

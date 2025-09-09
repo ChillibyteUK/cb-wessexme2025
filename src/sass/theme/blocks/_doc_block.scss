@@ -1,0 +1,23 @@
+.documents {
+    &__card {
+        border: 1px solid var(--col-grey-200);
+        height: 100%;
+        display: grid !important;
+        grid-template-rows: auto 1fr auto
+    }
+    &__image {
+        border: 1px solid var(--col-grey-200);
+        margin: 0.5rem;
+    }
+    &__title {
+        font-size: var(--fs-400);
+        color: #000;
+        padding: 0.25rem;
+    }
+    &__meta {
+        font-size: var(--fs-200);
+        padding: 0.25rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}

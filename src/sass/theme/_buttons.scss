@@ -1,0 +1,157 @@
+.btn {
+    text-decoration: none;
+    border-radius: 0.25rem;
+    border-style: solid;
+    display: inline-block;
+}
+.btn-tx {
+    background-color: hsl( var(--hsl-blue-900), 0.8);
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-600);
+    transition: all 300ms ease;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    position: relative;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: white;
+    }
+    &:hover {
+        &::after {
+            transform: translatex(0.5rem);
+        }
+    }
+
+    &::after {
+        content: "\f105";
+        font-family: "Font Awesome 6 Free";
+        line-height: 1.4;
+        position: absolute;
+        margin-left: 5px;
+        transition: transform 300ms ease-out;
+    }
+}
+
+.btn-primary {
+    background-color: var(--col-burgundy-400);
+    border-color: var(--col-burgundy-400);
+    color: white;
+    text-transform: uppercase;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-600);
+    transition: all 300ms ease;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: white;
+    }
+    &:hover {
+        &::after {
+            transform: translatex(0.5rem);
+        }
+    }
+
+    &::after {
+        content: "\f105";
+        font-family: "Font Awesome 6 Free";
+        line-height: 1.4;
+        position: absolute;
+        margin-left: 5px;
+        transition: transform 300ms ease-out;
+    }
+
+}
+
+.btn-outline-primary {
+    border-color: var(--col-blue-400);
+    color: var(--col-blue-400);
+    text-transform: uppercase;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-600);
+    transition: all 300ms ease;
+    padding: 0.5rem 1rem;
+
+    &:hover,
+    &:focus {
+        background-color: hsl(var(--hsl-blue-400), .8) !important;
+        color: white !important;
+    }
+    &.active {
+        background-color: var(--col-blue-400);
+        color: white;
+    }
+}
+
+.filters {
+    .btn-outline-primary {
+        font-size: var(--fs-300);
+        text-transform: initial;
+    }
+}
+
+.btn-next {
+    width: 125px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+
+    &::after {
+        content: "\f105";
+        font-family: 'font awesome 6 free';
+        margin-left: 0.5rem;
+        position: absolute;
+        transition: transform 300ms ease-out;
+    }
+    &:hover {
+        &::after {
+            transform: translatex(0.5rem);
+        }
+    }
+}
+
+.btn-previous {
+    min-width: 125px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 0.5rem 1rem 0.5rem 2rem;
+    position: relative;
+
+    &::before {
+        content: "\f104";
+        font-family: 'font awesome 6 free';
+        left: 1rem;
+        position: absolute;
+        transition: transform 300ms ease-out;
+    }
+    &:hover {
+        &:before {
+            transform: translatex(-0.5rem);
+        }
+    }
+
+    &::after {
+        content: "";
+    }
+}
+
+.btn-previous, .btn-next {
+    a {
+        transition: all 300ms ease;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+.btn-previous:hover, .btn-next:hover {
+    a {
+        color: var(--col-green-600);
+    }
+}

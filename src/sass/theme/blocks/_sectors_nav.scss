@@ -1,0 +1,36 @@
+.sectors_nav {
+    // background-color: var(--col-green-900);
+    // color: white;
+    .sectors {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        &__card {
+            width: 160px;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            .img_container {
+                aspect-ratio: 1 / 1;
+                width: 90%;
+                margin-inline: auto;
+                border-radius: 50%;
+                margin-bottom: 1rem;
+                overflow: hidden;
+                img {
+                    aspect-ratio: 1 / 1;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    transition: transform 300ms ease;
+                }
+            }
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
