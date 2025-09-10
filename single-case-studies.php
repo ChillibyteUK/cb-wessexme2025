@@ -136,12 +136,12 @@ get_header();
 				echo render_block( $block );
 			}
 
-			$images = get_field( 'gallery' );
-            if ( count( $images ) > 1 ) {
+            $images = get_field( 'gallery' );
+            if ( ! empty( $images ) && count( $images ) > 1 ) {
                 echo '<div class="gallery mt-4">';
                 foreach ( $images as $img ) {
                     ?>
-                    <a class="gallery__preview" data-fancybox="gallery" href="<?= esc_url( wp_get_attachment_image_url( $img, 'full' ) ); ?>" style="background-image:url(<?=wp_get_attachment_image_url( $img, 'large' )?>)"></a>
+                    <a class="gallery__preview" data-fancybox="gallery" href="<?= esc_url( wp_get_attachment_image_url( $img, 'full' ) ); ?>" style="background-image:url(<?= esc_url( wp_get_attachment_image_url( $img, 'large' ) ); ?>)"></a>
                     <?php
                 }
                 echo '</div>';
