@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 add_action( 'wp_head', function() {
-    echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/css/jquery.fancybox.min.css" />';
+    echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css" />';
 });
 
 get_header();
@@ -197,7 +197,16 @@ get_header();
 <?php
 add_action( 'wp_footer', function(){
     ?>
-<script src="<?=get_stylesheet_directory_uri()?>/js/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.Fancybox) {
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            // Add any custom options here if needed
+        });
+    }
+});
+</script>
     <?php
 },9999);
 get_footer();
