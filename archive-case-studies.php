@@ -60,14 +60,14 @@ get_header();
                     }
                     $cats     = get_the_terms( get_the_ID(), 'cssector' );
                     $category = wp_list_pluck( $cats, 'name' );
-                    $flashcat = $category[0] ?? null ? acf_slugify( $category[0] ) : '';
+                    $flashcat = $category[0] ?? null ? sanitize_title( $category[0] ) : '';
                     $catclass = implode( ' ', array_map( 'cbslugify', $category ) );
                     $category = implode( ',', $category );
 
                     $the_date = get_the_date( 'jS F, Y' );
 
-                    $gallery = get_field( 'gallery', get_the_ID() );
-                    $img     = wp_get_attachment_image_url( $gallery[0], 'large' );
+                    // $gallery = get_field( 'gallery', get_the_ID() );
+                    // $img     = wp_get_attachment_image_url( $gallery[0], 'large' );
 
                     ?>
 
