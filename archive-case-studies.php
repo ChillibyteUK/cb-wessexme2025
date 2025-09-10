@@ -46,7 +46,7 @@ get_header();
             <?php
 			$case_studies_query = new WP_Query(
 				array(
-					'post_type' => 'case-studies',
+					'post_type'      => 'case-studies',
 					'posts_per_page' => -1,
 				)
 			);
@@ -66,8 +66,8 @@ get_header();
 
                     $the_date = get_the_date( 'jS F, Y' );
 
-                    // $gallery = get_field( 'gallery', get_the_ID() );
-                    // $img     = wp_get_attachment_image_url( $gallery[0], 'large' );
+                    $gallery = get_field( 'gallery', get_the_ID() );
+                    $img     = wp_get_attachment_image_url( $gallery[0], 'large' );
 
                     ?>
 

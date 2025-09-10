@@ -39,73 +39,73 @@ get_header();
 					if ( get_field( 'location' ) ?? null ) {
 						?>
 						<div class="sidebar__title grid-cols-2">Location:</div>
-						<div class="sidebar__value grid-cols-2"><?= esc_html( get_field('location') ) ?></div>
+						<div class="sidebar__value grid-cols-2"><?= esc_html( get_field( 'location' ) ); ?></div>
 						<?php
 					}
                     if ( get_field( 'client' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Client:</div>
-                        <div class="sidebar__value grid-cols-2"><?= esc_html( get_field('client') ) ?></div>
+                        <div class="sidebar__value grid-cols-2"><?= esc_html( get_field( 'client' ) ); ?></div>
                         <?php
                     }
                     if ( get_field( 'main_contractor' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Principal Contractor:</div>
-                        <div class="sidebar__value grid-cols-2"><?= esc_html( get_field('main_contractor') ) ?></div>
+                        <div class="sidebar__value grid-cols-2"><?= esc_html( get_field( 'main_contractor' ) ); ?></div>
                         <?php
                     }
                     if ( get_field( 'objectives' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Objectives:</div>
-                        <div class="sidebar__value grid-cols-2"><?= cb_list( get_field('objectives') ) ?></div>
+                        <div class="sidebar__value grid-cols-2"><?= wp_kses_post( cb_list( get_field( 'objectives' ) ) ); ?></div>
                         <?php
                     }
                     if ( get_field( 'solution' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Solution:</div>
-                        <div class="sidebar__value grid-cols-2"><?= cb_list( get_field('solution') ) ?></div>
+                        <div class="sidebar__value grid-cols-2"><?= wp_kses_post( cb_list( get_field( 'solution' ) ) ); ?></div>
                         <?php
                     }
                     if ( get_field( 'supporting_mfrs' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Supporting Manufacturers:</div>
-                        <div class="sidebar__value grid-cols-2"><?= cb_list( get_field('supporting_mfrs') ) ?></div>
+                        <div class="sidebar__value grid-cols-2"><?= wp_kses_post( cb_list( get_field( 'supporting_mfrs' ) ) ); ?></div>
                         <?php
                     }
                     if ( get_field( 'supporting_specialists' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Supporting Specialists:</div>
-                        <div class="sidebar__value grid-cols-2"><?= cb_list( get_field('supporting_specialists') ) ?></div>
+                        <div class="sidebar__value grid-cols-2"><?= wp_kses_post( cb_list( get_field( 'supporting_specialists' ) ) ); ?></div>
                         <?php
                     }
                     if ( get_field( 'benefits' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Benefits:</div>
-                        <div class="sidebar__value grid-cols-2"><?= cb_list( get_field('benefits') ) ?></div>
+                        <div class="sidebar__value grid-cols-2"><?= wp_kses_post( cb_list( get_field( 'benefits' ) ) ); ?></div>
                         <?php
                     }
                     if ( get_field( 'date_completed' ) ?? null ) {
                         ?>
                         <div class="sidebar__title">Date Completed:</div>
-                        <div class="sidebar__value"><?= get_field('date_completed') ?></div>
+                        <div class="sidebar__value"><?= esc_html( get_field( 'date_completed' ) ); ?></div>
                         <?php
                     }
                     if ( get_field( 'project_duration' ) ?? null ) {
                         ?>
                         <div class="sidebar__title">Project Duration:</div>
-                        <div class="sidebar__value"><?= get_field('project_duration') ?></div>
+                        <div class="sidebar__value"><?= esc_html( get_field( 'project_duration' ) ); ?></div>
                         <?php
                     }
                     if ( get_field( 'engineers_on_site' ) ?? null ) {
                         ?>
                         <div class="sidebar__title">Engineers on Site:</div>
-                        <div class="sidebar__value"><?= get_field('engineers_on_site') ?></div>
+                        <div class="sidebar__value"><?= esc_html( get_field( 'engineers_on_site' ) ); ?></div>
                         <?php
                     }
                     if ( get_field( 'project_value' ) ?? null ) {
                         ?>
                         <div class="sidebar__title">Project Value:</div>
-                        <div class="sidebar__value">&pound;<?= number_format( get_field('project_value') ) ?></div>
+                        <div class="sidebar__value">&pound;<?= esc_html( number_format( get_field( 'project_value' ) ) ); ?></div>
                         <?php
                     }
                     ?>
@@ -119,7 +119,7 @@ get_header();
                 <?php
                 $img = wp_get_attachment_image_url( get_field( 'gallery' )[0], 'full' );
                 ?>
-                <img src="<?=$img?>" alt="" class="case-study__image">
+                <img src="<?= esc_url( $img ); ?>" alt="" class="case-study__image">
             <?php
 
             $sector_terms  = get_the_terms( get_the_ID(), 'cssector' );
@@ -133,7 +133,7 @@ get_header();
         </div>
             <?php
 			foreach ( $blocks as $block ) {
-				echo render_block( $block );
+				echo render_block( $block ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
             $images = get_field( 'gallery' );
@@ -151,36 +151,38 @@ get_header();
             </div>
         </div>
         <?php
-        $cats = get_the_terms(get_the_ID(),'cssector');
-        $ids = wp_list_pluck($cats,'term_id');
-        $r = new WP_Query(array(
-            'post_type' => 'case-studies',
-            'posts_per_page' => 4,
-            'post__not_in' => array(get_the_ID()),
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'cssector',
-                    'field' => 'term_id',
-                    'terms' => $ids
-                )
-            )
-        ));
-        if ($r->have_posts()) {
-                ?>
+        $cats = get_the_terms( get_the_ID(), 'cssector' );
+        $ids  = wp_list_pluck( $cats, 'term_id' );
+        $r    = new WP_Query(
+			array(
+				'post_type'      => 'case-studies',
+				'posts_per_page' => 4,
+				'post__not_in'   => array( get_the_ID() ),
+				'tax_query'      => array(
+					array(
+						'taxonomy' => 'cssector',
+						'field'    => 'term_id',
+						'terms'    => $ids,
+					),
+				),
+			)
+		);
+        if ( $r->have_posts() ) {
+			?>
             <section class="related pb-5">
                 <h2 class="text-blue-400 dot">Related Case Studies</h2>
                 <div class="row g-4">
             <?php
-            while ($r->have_posts()) {
+            while ( $r->have_posts() ) {
                 $r->the_post();
                 ?>
                 <div class="col-md-6 col-xl-3">
-                    <a class="related__card" href="<?=get_the_permalink()?>">
+                    <a class="related__card" href="<?= esc_url( get_the_permalink() ); ?>">
                         <div class="related__image_container">
-                            <img src="<?=wp_get_attachment_image_url(get_field('gallery',get_the_ID())[0],'large')?>" alt="" class="related__image">
+                            <img src="<?= esc_url( wp_get_attachment_image_url( get_field( 'gallery', get_the_ID() )[0], 'large' ) ); ?>" alt="" class="related__image">
                         </div>
                         <div class="related__content">
-                            <h3 class="related__title"><?=get_the_title()?></h3>
+                            <h3 class="related__title"><?= esc_html( get_the_title() ); ?></h3>
                         </div>
                     </a>
                 </div>
@@ -195,8 +197,10 @@ get_header();
     </div>
 </main>
 <?php
-add_action( 'wp_footer', function(){
-    ?>
+add_action(
+	'wp_footer',
+	function () {
+   		?>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -207,6 +211,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-    <?php
-},9999);
+    	<?php
+	},
+	9999
+);
 get_footer();
