@@ -7,102 +7,105 @@
 
 defined( 'ABSPATH' ) || exit;
 
-add_action( 'wp_head', function() {
-    echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css" />';
-});
+add_action(
+	'wp_head',
+	function () {
+    	echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css" />';
+	}
+);
 
 get_header();
 ?>
 <main id="main" class="case-study">
     <?php
     $content = get_the_content();
-    $blocks = parse_blocks($content);
+    $blocks  = parse_blocks( $content );
     ?>
     <section class="breadcrumbs container-xl pt-4">
     <?php
-    if (function_exists('yoast_breadcrumb')) {
-        yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+    if ( function_exists( 'yoast_breadcrumb' ) ) {
+        yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
     }
     ?>
     </section>
     <div class="container-xl">
-        <h1 class="mb-4 text-blue-400 dot"><?=get_the_title()?></h1>
+        <h1 class="mb-4 text-blue-400 dot"><?= esc_html( get_the_title() ); ?></h1>
         <div class="row g-4 pb-4">
             <div class="col-lg-4">
                 <div class="sidebar">
                     <h3 class="text-blue-400">Key Facts</h3>
                     <div class="sidebar__grid">
                     <?php
-                        if (get_field('location') ?? null) {
-                            ?>
-                            <div class="sidebar__title grid-cols-2">Location:</div>
-                            <div class="sidebar__value grid-cols-2"><?=get_field('location')?></div>
-                            <?php
-                        }
-                    if (get_field('client') ?? null) {
+					if ( get_field( 'location' ) ?? null ) {
+						?>
+						<div class="sidebar__title grid-cols-2">Location:</div>
+						<div class="sidebar__value grid-cols-2"><?= esc_html( get_field('location') ) ?></div>
+						<?php
+					}
+                    if ( get_field( 'client' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Client:</div>
-                        <div class="sidebar__value grid-cols-2"><?=get_field('client')?></div>
+                        <div class="sidebar__value grid-cols-2"><?= esc_html( get_field('client') ) ?></div>
                         <?php
                     }
-                    if (get_field('main_contractor') ?? null) {
+                    if ( get_field( 'main_contractor' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Principal Contractor:</div>
-                        <div class="sidebar__value grid-cols-2"><?=get_field('main_contractor')?></div>
+                        <div class="sidebar__value grid-cols-2"><?= esc_html( get_field('main_contractor') ) ?></div>
                         <?php
                     }
-                    if (get_field('objectives') ?? null) {
+                    if ( get_field( 'objectives' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Objectives:</div>
-                        <div class="sidebar__value grid-cols-2"><?=cb_list(get_field('objectives'))?></div>
+                        <div class="sidebar__value grid-cols-2"><?= cb_list( get_field('objectives') ) ?></div>
                         <?php
                     }
-                    if (get_field('solution') ?? null) {
+                    if ( get_field( 'solution' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Solution:</div>
-                        <div class="sidebar__value grid-cols-2"><?=cb_list(get_field('solution'))?></div>
+                        <div class="sidebar__value grid-cols-2"><?= cb_list( get_field('solution') ) ?></div>
                         <?php
                     }
-                    if (get_field('supporting_mfrs') ?? null) {
+                    if ( get_field( 'supporting_mfrs' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Supporting Manufacturers:</div>
-                        <div class="sidebar__value grid-cols-2"><?=cb_list(get_field('supporting_mfrs'))?></div>
+                        <div class="sidebar__value grid-cols-2"><?= cb_list( get_field('supporting_mfrs') ) ?></div>
                         <?php
                     }
-                    if (get_field('supporting_specialists') ?? null) {
+                    if ( get_field( 'supporting_specialists' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Supporting Specialists:</div>
-                        <div class="sidebar__value grid-cols-2"><?=cb_list(get_field('supporting_specialists'))?></div>
+                        <div class="sidebar__value grid-cols-2"><?= cb_list( get_field('supporting_specialists') ) ?></div>
                         <?php
                     }
-                    if (get_field('benefits') ?? null) {
+                    if ( get_field( 'benefits' ) ?? null ) {
                         ?>
                         <div class="sidebar__title grid-cols-2">Benefits:</div>
-                        <div class="sidebar__value grid-cols-2"><?=cb_list(get_field('benefits'))?></div>
+                        <div class="sidebar__value grid-cols-2"><?= cb_list( get_field('benefits') ) ?></div>
                         <?php
                     }
-                    if (get_field('date_completed') ?? null) {
+                    if ( get_field( 'date_completed' ) ?? null ) {
                         ?>
                         <div class="sidebar__title">Date Completed:</div>
-                        <div class="sidebar__value"><?=get_field('date_completed')?></div>
+                        <div class="sidebar__value"><?= get_field('date_completed') ?></div>
                         <?php
                     }
-                    if (get_field('project_duration') ?? null) {
+                    if ( get_field( 'project_duration' ) ?? null ) {
                         ?>
                         <div class="sidebar__title">Project Duration:</div>
-                        <div class="sidebar__value"><?=get_field('project_duration')?></div>
+                        <div class="sidebar__value"><?= get_field('project_duration') ?></div>
                         <?php
                     }
-                    if (get_field('engineers_on_site') ?? null) {
+                    if ( get_field( 'engineers_on_site' ) ?? null ) {
                         ?>
                         <div class="sidebar__title">Engineers on Site:</div>
-                        <div class="sidebar__value"><?=get_field('engineers_on_site')?></div>
+                        <div class="sidebar__value"><?= get_field('engineers_on_site') ?></div>
                         <?php
                     }
-                    if (get_field('project_value') ?? null) {
+                    if ( get_field( 'project_value' ) ?? null ) {
                         ?>
                         <div class="sidebar__title">Project Value:</div>
-                        <div class="sidebar__value">&pound;<?=number_format(get_field('project_value'))?></div>
+                        <div class="sidebar__value">&pound;<?= number_format( get_field('project_value') ) ?></div>
                         <?php
                     }
                     ?>
@@ -114,34 +117,31 @@ get_header();
             </div>
             <div class="col-lg-8 case-study__content">
                 <?php
-                $img = wp_get_attachment_image_url(get_field('gallery')[0],'full');
+                $img = wp_get_attachment_image_url( get_field( 'gallery' )[0], 'full' );
                 ?>
                 <img src="<?=$img?>" alt="" class="case-study__image">
             <?php
 
-            $sector = get_the_terms(get_the_ID(), 'cssector')[0]->name ?? null ?: '';
-            $service = implode(', ', wp_list_pluck( get_the_terms(get_the_ID(), 'csservice'), 'name') ) ?? null ?: '';
+            $sector_terms  = get_the_terms( get_the_ID(), 'cssector' );
+            $sector        = ( isset( $sector_terms[0]->name ) && $sector_terms[0]->name ) ? $sector_terms[0]->name : '';
+            $service_terms = get_the_terms( get_the_ID(), 'csservice' );
+            $service       = ( $service_terms && is_array( $service_terms ) ) ? implode( ', ', wp_list_pluck( $service_terms, 'name' ) ) : '';
             ?>
         <div class="cs-sector">
-            <div><strong>Sector:</strong> <?=$sector?></div>
-            <div><strong>Project Type:</strong> <?=$service?></div>
+            <div><strong>Sector:</strong> <?= esc_html( $sector ); ?></div>
+            <div><strong>Project Type:</strong> <?= esc_html( $service ); ?></div>
         </div>
             <?php
+			foreach ( $blocks as $block ) {
+				echo render_block( $block );
+			}
 
-            // $count = estimate_reading_time_in_minutes( get_the_content(), 200, true, true );
-            // echo $count;
-
-    foreach ($blocks as $block) {
-        echo render_block($block);
-    }
-            ?>
-            <?php
-            $images = get_field('gallery');
-            if (count($images) > 1) {
+			$images = get_field( 'gallery' );
+            if ( count( $images ) > 1 ) {
                 echo '<div class="gallery mt-4">';
-                foreach ($images as $img) {
+                foreach ( $images as $img ) {
                     ?>
-                    <a class="gallery__preview" data-fancybox="gallery" href="<?=wp_get_attachment_image_url( $img, 'full' )?>" style="background-image:url(<?=wp_get_attachment_image_url( $img, 'large' )?>)"></a>
+                    <a class="gallery__preview" data-fancybox="gallery" href="<?= esc_url( wp_get_attachment_image_url( $img, 'full' ) ); ?>" style="background-image:url(<?=wp_get_attachment_image_url( $img, 'large' )?>)"></a>
                     <?php
                 }
                 echo '</div>';
