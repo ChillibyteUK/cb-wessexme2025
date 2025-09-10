@@ -2,7 +2,7 @@
 /**
  * Block template for CB Andwis 2.
  *
- * @package cb-watertite2024
+ * @package cb-wessexme2025
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -121,7 +121,7 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 </section>
 <?php
-add_action (
+add_action(
 	'wp_footer',
 	function () {
 		?>

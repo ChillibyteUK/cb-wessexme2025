@@ -1,10 +1,10 @@
 {
-    "key": "group_6464a3b19e985",
-    "title": "CB Andwis",
+    "key": "group_64639f11d16c1",
+    "title": "CB Accreditations & Awards",
     "fields": [
         {
-            "key": "field_6464a3b2ddd1e",
-            "label": "CB Andwis Group",
+            "key": "field_64639f12e8f33",
+            "label": "CB Accreditations & Awards Grid",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -26,7 +26,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-andwis-2"
+                "value": "acf\/cb-accreditations"
             }
         ]
     ],
@@ -39,5 +39,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1757422198
+    "modified": 1757426063
 }

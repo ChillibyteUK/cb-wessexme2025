@@ -30,7 +30,7 @@
   --fs-700: clamp(1.42rem, calc(1.07rem + 1.77vw), 2.44rem);
   --fs-800: clamp(1.80rem, calc(1.10rem + 3.50vw), 3.82rem);
   --fs-900: clamp(2.03rem, calc(1.07rem + 4.77vw), 4.77rem);
-  --h-top: 98px;
+  --h-top: 82px;
   --hero-height: 400px;
 }
 
@@ -21177,6 +21177,15 @@ strong {
   font-size: var(--fs-450);
 }
 
+.text-pretty {
+  text-wrap: pretty;
+}
+
+@supports not (text-wrap: pretty) {
+  .text-pretty {
+    text-wrap: balance;
+  }
+}
 .has-dark-color {
   color: var(--col-blue-400) !important;
 }
@@ -21340,12 +21349,12 @@ strong {
   gap: 1rem;
 }
 #wrapper-navbar .navbar-brand {
-  background-image: url(../img/watertite-logo.svg);
+  background-image: url(../img/wessex-logo.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top left;
-  width: 225px;
-  height: 90px;
+  width: 220px;
+  height: 66px;
   margin-right: 0;
 }
 #wrapper-navbar .current-menu-item > .nav-link {

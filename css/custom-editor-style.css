@@ -30,7 +30,7 @@
   --fs-700: clamp(1.42rem, calc(1.07rem + 1.77vw), 2.44rem);
   --fs-800: clamp(1.80rem, calc(1.10rem + 3.50vw), 3.82rem);
   --fs-900: clamp(2.03rem, calc(1.07rem + 4.77vw), 4.77rem);
-  --h-top: 98px;
+  --h-top: 82px;
   --hero-height: 400px;
 }
 

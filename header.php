@@ -28,7 +28,7 @@ defined('ABSPATH') || exit;
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "CPS Building Services Ltd",
-  "logo": "https://www.cpsbuildingservices.co.uk/wp-content/themes/cb-watertite2024/img/cps-og-1200x630.png",
+  "logo": "https://www.cpsbuildingservices.co.uk/wp-content/themes/cb-wessexme2025/img/cps-og-1200x630.png",
   "url": "https://www.cpsbuildingservices.co.uk/",
   "telephone": "+441223232054",
   "address": {

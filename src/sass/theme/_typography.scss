@@ -74,3 +74,13 @@ strong {
 .has-medium-font-size {
     font-size: var(--fs-450);
 }
+
+.text-pretty {
+    text-wrap: pretty;
+}
+
+@supports not (text-wrap: pretty) {
+    .text-pretty {
+        text-wrap: balance;
+    }
+}

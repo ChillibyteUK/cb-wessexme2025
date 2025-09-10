@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-define('CB_THEME_DIR', WP_CONTENT_DIR . '/themes/cb-watertite2024');
+define('CB_THEME_DIR', WP_CONTENT_DIR . '/themes/cb-wessexme2025');
 
 require_once CB_THEME_DIR . '/inc/cb-theme.php';
 
@@ -60,7 +60,7 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
  * Load the child theme's text domain
  */
 function add_child_theme_textdomain() {
-	load_child_theme_textdomain( 'cb-watertite2024', get_stylesheet_directory() . '/languages' );
+	load_child_theme_textdomain( 'cb-wessexme2025', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
