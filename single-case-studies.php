@@ -1,8 +1,13 @@
 <?php
-// Exit if accessed directly.
-defined('ABSPATH') || exit;
+/**
+ * The template for displaying single case studies
+ *
+ * @package cb-wessexme2025
+ */
 
-add_action('wp_head',function(){
+defined( 'ABSPATH' ) || exit;
+
+add_action( 'wp_head', function() {
     echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/css/jquery.fancybox.min.css" />';
 });
 
