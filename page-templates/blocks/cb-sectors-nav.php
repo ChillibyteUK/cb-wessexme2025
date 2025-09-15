@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
         while ( have_rows( 'sectors' ) ) {
             the_row();
             $sec = get_sub_field( 'sector' );
-            $img = get_the_post_thumbnail( $sec, 'large' ) ? get_the_post_thumbnail( $sec, 'large' ) : get_stylesheet_directory_uri() . '/img/missing-image.png';
+            $img = get_the_post_thumbnail_url( $sec, 'large' ) ? get_the_post_thumbnail_url( $sec, 'large' ) : get_stylesheet_directory_uri() . '/img/missing-image.png';
             ?>
             <a class="sectors__card" href="<?= esc_url( get_the_permalink( $sec ) ); ?>">
                 <div class="img_container"><img src="<?= esc_url( $img ); ?>"></div>
