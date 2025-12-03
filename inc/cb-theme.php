@@ -85,7 +85,9 @@ function widgets_init() {
     register_nav_menus(
 		array(
 			'primary_nav'  => __( 'Primary Nav', 'cb-pbh2025' ),
-			'footer_menu1' => __( 'Footer Nav', 'cb-pbh2025' ),
+			'footer_menu1' => __( 'Footer Nav 1', 'cb-pbh2025' ),
+			'footer_menu2' => __( 'Footer Nav 2', 'cb-pbh2025' ),
+			'footer_menu3' => __( 'Footer Nav 3', 'cb-pbh2025' ),
 		)
 	);
 
