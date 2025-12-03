@@ -21334,7 +21334,7 @@ strong {
   color: var(--col-blue-400);
 }
 #wrapper-navbar a:hover {
-  color: var(--col-burgundy-400);
+  color: var(--col-blue-400);
 }
 #wrapper-navbar #top-nav {
   font-size: var(--fs-300);
@@ -22036,7 +22036,7 @@ footer .cb:hover {
 .testimonials__cite {
   font-weight: var(--fw-600);
   font-size: var(--fs-400);
-  color: var(--col-burgundy-400);
+  color: var(--col-blue-400);
 }
 
 .person_bio__image {
