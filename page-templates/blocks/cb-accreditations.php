@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <section class="accreditations py-5">
     <div class="container-xl">
-        <h2 class="text-blue-400 dot mb-5">Accreditations &amp; Awards</h2>
+        <h2 class="dot mb-5">Accreditations &amp; Awards</h2>
         <div class="accreditations__grid">
             <?php
             $c = 0;

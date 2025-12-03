@@ -11,7 +11,7 @@ if ( have_rows( 'client_logos', 'options' ) ) {
 	?>
 <section class="clients py-5">
     <div class="container-xl">
-        <h2 class="text-blue-400 dot mb-5">Our Clients</h2>
+        <h2 class="dot mb-5">Our Clients</h2>
         <div class="clients__slider swiper">
             <div class="swiper-wrapper">
                 <?php

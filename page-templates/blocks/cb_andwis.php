@@ -1,6 +1,6 @@
 <section class="andwis py-5">
     <div class="container-xl">
-        <h2 class="text-blue-400 dot mb-4">Part of The Andwis Group</h2>
+        <h2 class="dot mb-4">Part of The Andwis Group</h2>
         <div class="mb-5">
             <h3>What we do</h3>
             <div class="row mb-4">

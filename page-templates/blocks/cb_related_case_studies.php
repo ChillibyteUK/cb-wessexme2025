@@ -34,7 +34,7 @@ if ($r->have_posts()) {
         ?>
 <div class="container-xl">
     <section class="related pb-5">
-        <h2 class="text-blue-400 dot">Related Case Studies</h2>
+        <h2 class="dot">Related Case Studies</h2>
         <div class="row g-4">
     <?php
     while ($r->have_posts()) {

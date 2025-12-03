@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <section class="latest_cs related py-5">
     <div class="container-xl">
-        <h2 class="text-blue-400 dot mb-5">Latest Case Studies</h2>
+        <h2 class="dot mb-5">Latest Case Studies</h2>
         <div class="row g-4 mb-4">
             <?php
 			$q = new WP_Query(

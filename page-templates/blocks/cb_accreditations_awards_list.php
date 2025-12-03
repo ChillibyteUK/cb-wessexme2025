@@ -13,7 +13,7 @@ else {
 ?>
 <section class="awards_list pb-5">
     <div class="container-xl">
-        <h2 class="text-blue-400 dot mb-5"><?=$title?></h2>
+        <h2 class="dot mb-5"><?=$title?></h2>
         <div class="row g-4">
         <?php
         foreach ($list as $l) {
