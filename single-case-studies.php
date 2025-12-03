@@ -29,11 +29,11 @@ get_header();
     ?>
     </section>
     <div class="container-xl">
-        <h1 class="mb-4 text-blue-400 dot"><?= esc_html( get_the_title() ); ?></h1>
+        <h1 class="mb-4 dot"><?= esc_html( get_the_title() ); ?></h1>
         <div class="row g-4 pb-4">
             <div class="col-lg-4">
                 <div class="sidebar">
-                    <h3 class="text-blue-400">Key Facts</h3>
+                    <h3 class="">Key Facts</h3>
                     <div class="sidebar__grid">
                     <?php
 					if ( get_field( 'location' ) ?? null ) {
@@ -170,7 +170,7 @@ get_header();
         if ( $r->have_posts() ) {
 			?>
             <section class="related pb-5">
-                <h2 class="text-blue-400 dot">Related Case Studies</h2>
+                <h2 class="dot">Related Case Studies</h2>
                 <div class="row g-4">
             <?php
             while ( $r->have_posts() ) {

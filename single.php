@@ -21,7 +21,7 @@ $img = get_the_post_thumbnail_url(get_the_ID(),'full');
     <div class="container-xl">
         <div class="row g-4 pb-4">
             <div class="col-lg-9 blog__content">
-                <h1 class="blog__title text-blue-400"><?=get_the_title()?></h1>
+                <h1 class="blog__title"><?=get_the_title()?></h1>
                 <div class="blog__date mb-2"><?=get_the_date('jS F Y')?></div>
                 <img src="<?=$img?>" alt="" class="blog__image">
             <?php
@@ -43,7 +43,7 @@ $img = get_the_post_thumbnail_url(get_the_ID(),'full');
             ?>
             </div>
             <div class="col-lg-3 related">
-                <h3 class="text-blue-400 dot">Related News</h3>
+                <h3 class="dot">Related News</h3>
             <?php
             $cats = get_the_category();
             $ids = wp_list_pluck($cats,'term_id');

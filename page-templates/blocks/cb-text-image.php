@@ -18,10 +18,10 @@ $bg          = get_field( 'background_colour' ) ? 'bg--' . get_field( 'backgroun
             <div class="col-lg-6 d-flex flex-column justify-content-center text_image__content <?= esc_attr( $order_left ); ?>">
                 <?php
                 if ( get_field( 'title' ) ) {
-                    echo '<h2 class="text-blue-400 dot">' . esc_html( get_field( 'title' ) ) . '</h2>';
+                    echo '<h2 class="dot">' . esc_html( get_field( 'title' ) ) . '</h2>';
                 }
                 if ( get_field( 'subtitle' ) ) {
-                    echo '<h3 class="text-burgundy-400">' . esc_html( get_field( 'subtitle' ) ) . '</h3>';
+                    echo '<h3 class="">' . esc_html( get_field( 'subtitle' ) ) . '</h3>';
                 }
                 echo wp_kses_post( get_field( 'content' ) );
                 if ( get_field( 'cta' ) ) {
