@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :root {
-  --hsl-blue-400: 205, 42%, 21%;
-  --hsl-blue-900: 205, 42%, 0%;
+  --hsl-blue-400: 217, 70%, 33%;
+  --hsl-blue-900: 217, 70%, 15%;
   --hsl-green-200: 165 53% 71%;
   --hsl-green-300: 137 37% 73%;
   --hsl-green-400: 155, 100%, 34%;
@@ -21154,7 +21154,7 @@ h3, .h3 {
 }
 
 .text-burgundy-400 {
-  color: var(--col-burgundy-400);
+  color: var(--col-blue-400);
 }
 
 strong {
@@ -21224,8 +21224,8 @@ strong {
 }
 
 .btn-primary, .gform_button {
-  background-color: var(--col-burgundy-400);
-  border-color: var(--col-burgundy-400);
+  background-color: var(--col-blue-400);
+  border-color: var(--col-blue-400);
   color: white;
   text-transform: uppercase;
   font-size: var(--fs-400);
