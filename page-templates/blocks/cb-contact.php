@@ -29,3 +29,25 @@ defined( 'ABSPATH' ) || exit;
         </div>
     </div>
 </div>
+<div class="container-xl py-5">
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <p><?= wp_kses_post( get_field( 'contact_intro', 'options' ) ); ?></p>
+            <ul class="fa-ul no-indent">
+                <li class="mb-2"><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span> <?= wp_kses_post( get_field( 'contact_address_two', 'options' ) ); ?></li>
+                <li class="mb-2"><span class="fa-li"><i class="far fa-envelope"></i></span> <?= do_shortcode( '[contact_email_two]' ); ?></li>
+                <li class="mb-2"><span class="fa-li"><i class="fas fa-phone-alt"></i></span> <?= do_shortcode( '[contact_phone_two]' ); ?></li>
+                <?php
+                if ( get_field( 'contact_fax_two', 'options' ) ?? null ) {
+                    ?>
+                <li class="mb-2"><span class="fa-li"><i class="fas fa-fax"></i></span> <?= wp_kses_post( get_field( 'contact_fax_two', 'options' ) ); ?></li>
+                    <?php
+                }
+                ?>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <iframe src="<?= esc_url( get_field( 'google_maps_url_two', 'options' ) ); ?>" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</div>

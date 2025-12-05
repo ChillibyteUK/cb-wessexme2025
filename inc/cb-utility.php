@@ -40,20 +40,36 @@ add_shortcode(
 );
 
 add_shortcode(
-	'contact_phone',
-	function () {
-		if ( get_field( 'contact_phone', 'option' ) ) {
-			return '<a href="tel:' . parse_phone( get_field( 'contact_phone', 'option' ) ) . '">' . get_field( 'contact_phone', 'option' ) . '</a>';
-		}
-	}
+    'contact_phone',
+    function () {
+        if ( get_field( 'contact_phone', 'option' ) ) {
+            return '<a href="tel:' . parse_phone( get_field( 'contact_phone', 'option' ) ) . '">' . get_field( 'contact_phone', 'option' ) . '</a>';
+        }
+    }
 );
 add_shortcode(
-	'contact_email',
-	function () {
-		if ( get_field( 'contact_email', 'option' ) ) {
-			return '<a href="mailto:' . esc_attr( antispambot( get_field( 'contact_email', 'option' ) ) ) . '">' . get_field( 'contact_email', 'option' ) . '</a>';
-		}
-	}
+    'contact_phone_two',
+    function () {
+        if ( get_field( 'contact_phone_two', 'option' ) ) {
+            return '<a href="tel:' . parse_phone( get_field( 'contact_phone_two', 'option' ) ) . '">' . get_field( 'contact_phone_two', 'option' ) . '</a>';
+        }
+    }
+);
+add_shortcode(
+    'contact_email',
+    function () {
+        if ( get_field( 'contact_email', 'option' ) ) {
+            return '<a href="mailto:' . esc_attr( antispambot( get_field( 'contact_email', 'option' ) ) ) . '">' . get_field( 'contact_email', 'option' ) . '</a>';
+        }
+    }
+);
+add_shortcode(
+    'contact_email_two',
+    function () {
+        if ( get_field( 'contact_email_two', 'option' ) ) {
+            return '<a href="mailto:' . esc_attr( antispambot( get_field( 'contact_email_two', 'option' ) ) ) . '">' . get_field( 'contact_email_two', 'option' ) . '</a>';
+        }
+    }
 );
 add_shortcode(
 	'contact_email_icon',
