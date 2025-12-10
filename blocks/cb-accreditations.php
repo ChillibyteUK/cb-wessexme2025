@@ -7,8 +7,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$class = $block['className'] ? $block['className'] : 'py-5';
+
 ?>
-<section class="accreditations py-5">
+<section class="accreditations <?= esc_attr( $class ); ?>">
     <div class="container-xl">
 		<?php
 		if ( get_field( 'title' ) ) {
