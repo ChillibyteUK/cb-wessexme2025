@@ -25,9 +25,11 @@ if ( 'contain' === get_field( 'image_size' ) ) {
 	$image_size = 'contain';
 }
 
+$class = $block['className'] ? $block['className'] : 'py-5';
+
 ?>
 <!-- text_image -->
-<section class="text_image py-5 <?= esc_attr( $bg ); ?>">
+<section class="text_image <?= esc_attr( $class ); ?> <?= esc_attr( $bg ); ?>">
     <div class="container animated wow fadeIn">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column <?= esc_attr( $align_text ); ?> text_image__content <?= esc_attr( $order_left ); ?>">
