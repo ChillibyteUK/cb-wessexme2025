@@ -11,6 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 require_once CB_THEME_DIR . '/inc/cb-utility.php';
+require_once CB_THEME_DIR . '/inc/cb-acf-theme-palette.php';
 require_once CB_THEME_DIR . '/inc/cb-posttypes.php';
 require_once CB_THEME_DIR . '/inc/cb-taxonomies.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
@@ -20,6 +21,35 @@ require_once CB_THEME_DIR . '/inc/cb-news.php';
 // Remove unwanted SVG filter injection WP.
 remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+
+add_filter(
+    'wp_get_global_stylesheet',
+    function ( $stylesheet ) {
+        $stylesheet = preg_replace( '/<svg[^>]*>.*?<\/svg>/s', '', $stylesheet );
+        return $stylesheet;
+    }
+);
+
+add_action(
+    'after_setup_theme',
+    function () {
+        add_theme_support( 'editor-styles' );
+        add_editor_style( 'css/custom-editor-style.css' );
+    },
+    5
+);
+
+add_action(
+    'after_setup_theme',
+    function () {
+        remove_theme_support( 'editor-color-palette' );
+        remove_theme_support( 'editor-gradient-presets' );
+        remove_theme_support( 'editor-font-sizes' );
+    },
+    99
+);
+
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
 /**
  * Removes the comment-reply.min.js script from the footer.
@@ -103,41 +133,9 @@ add_action( 'widgets_init', 'widgets_init', 11 );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
- *
- * Adds support for disabling custom colors and defines a custom editor color palette.
  */
 function cb_theme_setup() {
     add_theme_support( 'disable-custom-colors' );
-    add_theme_support(
-        'editor-color-palette',
-        array(
-            array(
-                'name'  => 'Blackout',
-                'slug'  => 'dark',
-                'color' => '#1E1E1E',
-            ),
-            array(
-                'name'  => 'Light',
-                'slug'  => 'light',
-                'color' => '#F5F5E1',
-            ),
-            array(
-                'name'  => 'White',
-                'slug'  => 'white',
-                'color' => '#FFFFFF',
-            ),
-            array(
-                'name'  => 'Violet',
-                'slug'  => 'violet',
-                'color' => '#AA91F0',
-            ),
-            array(
-                'name'  => 'Green',
-                'slug'  => 'green',
-                'color' => '#BEFF2B',
-            ),
-        )
-    );
 }
 add_action( 'after_setup_theme', 'cb_theme_setup', 20 );
 
@@ -253,15 +251,15 @@ add_filter( 'gform_submit_button', 'wd_gf_update_submit_button', 10, 2 );
  */
 function cb_theme_enqueue() {
     $the_theme = wp_get_theme();
-    wp_enqueue_style( 'aos-style', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array() );
-    wp_enqueue_script( 'aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true );
+    wp_enqueue_style( 'aos-style', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array() );  // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+    wp_enqueue_script( 'aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 
     // Load Glide.js and GLightbox only on single work pages.
     if ( is_singular( 'work' ) ) {
-        wp_enqueue_style( 'glide-core', 'https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css', array(), null );
-        wp_enqueue_script( 'glide', 'https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js', array(), null, true );
-        wp_enqueue_style( 'glightbox-css', 'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css', array(), null );
-        wp_enqueue_script( 'glightbox-js', 'https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js', array(), null, true );
+        wp_enqueue_style( 'glide-core', 'https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+        wp_enqueue_script( 'glide', 'https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+        wp_enqueue_style( 'glightbox-css', 'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+        wp_enqueue_script( 'glightbox-js', 'https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
     }
 
 	// phpcs:disable
@@ -274,7 +272,7 @@ function cb_theme_enqueue() {
 	// phpcs:enable
 
 	wp_enqueue_style( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-    wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingV
+    wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 
 	wp_deregister_script( 'jquery' );
 }
