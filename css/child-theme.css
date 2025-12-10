@@ -21733,7 +21733,7 @@ footer .cb:hover {
     width: var(--slash-width);
   }
 }
-.text_image__image img {
+.text_image__image img.cover {
   aspect-ratio: 1/1;
   width: 100%;
   -o-object-fit: cover;
