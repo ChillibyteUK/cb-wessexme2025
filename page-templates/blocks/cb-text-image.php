@@ -21,7 +21,7 @@ if ( 'Top' === get_field( 'align_text' ) ) {
 }
 
 $image_size = 'cover';
-if ( 'Contain' === get_field( 'image_size' ) ) {
+if ( 'contain' === get_field( 'image_size' ) ) {
 	$image_size = 'contain';
 }
 
