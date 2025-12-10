@@ -19,7 +19,7 @@ $classes = $block['className'] ?? null;
                 <?php
                 if ( get_field( 'subtitle' ) ) {
                     ?>
-                <h2><?= esc_html( get_field( 'subtitle' ) ); ?></h2>
+                <h2><?= wp_kses_post( get_field( 'subtitle' ) ); ?></h2>
                     <?php
                 }
                 if ( get_field( 'cta' ) ) {
