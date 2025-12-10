@@ -26,11 +26,11 @@ defined( 'ABSPATH' ) || exit;
 			<div class="accordion-item">
 				<div class="accordion-header" id="<?= esc_attr( $item_id ); ?>">
 					<button class="flex-column align-items-start accordion-button<?= $is_first ? '' : ' collapsed'; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#<?= esc_attr( $collapse_id ); ?>" aria-expanded="<?= $is_first ? 'true' : 'false'; ?>" aria-controls="<?= esc_attr( $collapse_id ); ?>">
-						<h2 class="h3"><?= esc_html( get_sub_field( 'title' ) ); ?></h2>
+						<h2 class="h3 mb-0"><?= esc_html( get_sub_field( 'title' ) ); ?></h2>
 						<?php
 						if ( get_sub_field( 'subtitle' ) ) {
 							?>
-						<div><?= esc_html( get_sub_field( 'subtitle' ) ); ?></div>
+						<div class="mt-2"><?= esc_html( get_sub_field( 'subtitle' ) ); ?></div>
 							<?php
 						}
 						?>
