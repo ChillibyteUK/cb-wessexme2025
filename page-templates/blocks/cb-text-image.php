@@ -32,7 +32,7 @@ $class = $block['className'] ? $block['className'] : 'py-5';
 <section class="text_image <?= esc_attr( $class ); ?> <?= esc_attr( $bg ); ?>">
     <div class="container animated wow fadeIn">
         <div class="row">
-            <div class="col-lg-6 d-flex flex-column <?= esc_attr( $align_text ); ?> text_image__content <?= esc_attr( $order_left ); ?>">
+            <div class="col-lg-6 d-flex flex-column px-0 <?= esc_attr( $align_text ); ?> text_image__content <?= esc_attr( $order_left ); ?>">
                 <?php
                 if ( get_field( 'title' ) ) {
                     echo '<h2 class="dot">' . esc_html( get_field( 'title' ) ) . '</h2>';
