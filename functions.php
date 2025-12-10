@@ -12,6 +12,10 @@ define('CB_THEME_DIR', WP_CONTENT_DIR . '/themes/cb-wessexme2025');
 
 require_once CB_THEME_DIR . '/inc/cb-theme.php';
 
+
+remove_all_actions( 'upgrader_process_complete' );
+
+
 /**
  * Removes the parent themes stylesheet and scripts from inc/enqueue.php
  */
