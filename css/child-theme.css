@@ -21739,6 +21739,10 @@ footer .cb:hover {
   -o-object-fit: cover;
   object-fit: cover;
 }
+.text_image__image img.contain {
+  -o-object-fit: contain;
+  object-fit: contain;
+}
 
 .sectors_nav .sectors {
   display: flex;

@@ -20,6 +20,11 @@ if ( 'Top' === get_field( 'align_text' ) ) {
 	$align_text = 'justify-content-start';
 }
 
+$image_size = 'cover';
+if ( 'Contain' === get_field( 'image_size' ) ) {
+	$image_size = 'contain';
+}
+
 ?>
 <!-- text_image -->
 <section class="text_image py-5 <?= esc_attr( $bg ); ?>">
@@ -41,7 +46,7 @@ if ( 'Top' === get_field( 'align_text' ) ) {
                 ?>
             </div>
             <div class="col-lg-6 text_image__image <?= esc_attr( $align_image ); ?> <?= esc_attr( $order_right ); ?> px-lg-5">
-                <img class="img-fluid" src="<?= esc_url( wp_get_attachment_image_url( get_field( 'image' ), 'full' ) ); ?>">
+                <img class="img-fluid <?= esc_attr( $image_size ); ?>" src="<?= esc_url( wp_get_attachment_image_url( get_field( 'image' ), 'full' ) ); ?>">
             </div>
         </div>
     </div>
