@@ -6,15 +6,38 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
 ?>
 <section class="accreditations py-5">
     <div class="container-xl">
-        <h2 class="dot mb-5">Accreditations &amp; Awards</h2>
+		<?php
+		if ( get_field( 'title' ) ) {
+			?>
+        <h2 class="dot mb-5"><?= esc_html( get_field( 'title' ) ); ?></h2>
+			<?php
+		}
+		?>
         <div class="accreditations__grid">
             <?php
-            $c = 0;
+            $c          = 0;
+            $categories = (array) get_field( 'category' );
             while ( have_rows( 'accreditations', 'options' ) ) {
                 the_row();
+                $sub_categories = (array) get_sub_field( 'category' );
+
+                // Check if any sub_field category matches any of the block's categories.
+                $has_match = false;
+                foreach ( $sub_categories as $sub_cat ) {
+                    if ( in_array( $sub_cat, $categories, true ) ) {
+                        $has_match = true;
+                        break;
+                    }
+                }
+
+                if ( ! $has_match ) {
+                    continue;
+                }
+
                 if ( $c > 5 ) {
                     continue;
                 }

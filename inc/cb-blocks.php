@@ -129,7 +129,7 @@ function acf_blocks() {
 				'title'           => __( 'CB Accreditations/Awards List' ),
 				'category'        => 'layout',
 				'icon'            => 'cover-image',
-				'render_template' => 'blocks/cb_accreditations_awards_list.php',
+				'render_template' => 'blocks/cb-accreditations-awards-list.php',
 				'mode'            => 'edit',
 				'supports'        => array( 'mode' => false ),
             )

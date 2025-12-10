@@ -35,7 +35,6 @@ defined( 'ABSPATH' ) || exit;
                     <p class="mb-2"><?= do_shortcode( '[contact_address]' ); ?></p>
                     <p><?= do_shortcode( '[contact_phone]' ); ?></p>
                     <p><?= do_shortcode( '[contact_email]' ); ?></p>
-                    <p><?= do_shortcode( '[social_in_icon]' ); ?></p>
                 </div>
             </div>
         </div>
