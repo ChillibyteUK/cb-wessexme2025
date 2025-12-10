@@ -15,7 +15,7 @@ $classes = $block['className'] ?? null;
     <div class="container-xl">
         <div class="row">
             <div class="col-lg-8 py-5">
-                <h1><?= esc_html( get_field( 'title' ) ); ?></h1>
+                <h1><?= wp_kses_post( get_field( 'title' ) ); ?></h1>
                 <?php
                 if ( get_field( 'subtitle' ) ) {
                     ?>
