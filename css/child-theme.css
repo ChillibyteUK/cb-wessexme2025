@@ -21675,6 +21675,7 @@ footer .cb:hover {
   background-position: center;
   background-repeat: no-repeat;
   isolation: isolate;
+  overflow: hidden;
 }
 .hero h1, .hero .h1, .hero h2, .hero .h2 {
   text-shadow: -1px 1px 2px var(--col-blue-400);
