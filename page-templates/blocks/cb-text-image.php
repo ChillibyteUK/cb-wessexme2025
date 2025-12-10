@@ -10,12 +10,22 @@ defined( 'ABSPATH' ) || exit;
 $order_left  = ( 'text' === get_field( 'order' ) ) ? 'order-1 order-lg-1' : 'order-1 order-lg-2';
 $order_right = ( 'text' === get_field( 'order' ) ) ? 'order-2 order-lg-2' : 'order-2 order-lg-1';
 $bg          = get_field( 'background_colour' ) ? 'bg--' . get_field( 'background_colour' ) : '';
+
+$align_image = '';
+if ( 'Middle' === get_field( 'align_image' ) ) {
+	$align_image = 'd-flex align-items-center';
+}
+$align_text = 'justify-content-center';
+if ( 'Top' === get_field( 'align_text' ) ) {
+	$align_text = 'justify-content-start';
+}
+
 ?>
 <!-- text_image -->
 <section class="text_image py-5 <?= esc_attr( $bg ); ?>">
     <div class="container animated wow fadeIn">
         <div class="row">
-            <div class="col-lg-6 d-flex flex-column justify-content-center text_image__content <?= esc_attr( $order_left ); ?>">
+            <div class="col-lg-6 d-flex flex-column <?= esc_attr( $align_text ); ?> text_image__content <?= esc_attr( $order_left ); ?>">
                 <?php
                 if ( get_field( 'title' ) ) {
                     echo '<h2 class="dot">' . esc_html( get_field( 'title' ) ) . '</h2>';
@@ -30,7 +40,7 @@ $bg          = get_field( 'background_colour' ) ? 'bg--' . get_field( 'backgroun
                 }
                 ?>
             </div>
-            <div class="col-lg-6 text_image__image <?= esc_attr( $order_right ); ?> px-lg-5">
+            <div class="col-lg-6 text_image__image <?= esc_attr( $align_image ); ?> <?= esc_attr( $order_right ); ?> px-lg-5">
                 <img class="img-fluid" src="<?= esc_url( wp_get_attachment_image_url( get_field( 'image' ), 'full' ) ); ?>">
             </div>
         </div>
