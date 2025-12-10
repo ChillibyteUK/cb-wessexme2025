@@ -1,0 +1,15 @@
+.cb-accordion {
+    .accordion {
+        --bs-accordion-active-bg: var(--col-grey-200);
+        --bs-accordion-active-color: var(--col-black);
+    }
+    .accordion-header {
+        button {
+            position: relative;
+            &::after {
+                position: absolute;
+                right: 1rem;
+            }
+        }
+    }
+}

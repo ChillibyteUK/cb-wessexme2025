@@ -5,6 +5,9 @@ $col-highlight: #53DD6C;
 $col-grey: #FFF0F0;
 
 :root {
+
+    --col-black: #212529;
+
     --col-blue-400-hsl: 205 42% 21%;
     --col-blue-400: hsl(var(--col-blue-400-hsl));
     --col-blue-900-hsl: 206 42% 15%;

@@ -1,24 +1,26 @@
 @charset "UTF-8";
 :root {
-  --hsl-blue-400: 205, 42%, 21%;
-  --hsl-blue-900: 206, 42%, 15%;
-  --hsl-green-200: 165 53% 71%;
-  --hsl-green-300: 137 37% 73%;
-  --hsl-green-400: 155, 100%, 34%;
-  --hsl-green-900: 126, 40%, 18%;
-  --hsl-burgundy-400: 357 52% 27%;
-  --hsl-grey-200: 207, 24%, 93%;
-  --hsl-grey-400: 207, 13%, 48%;
-  --col-blue-400: hsl( var(--hsl-blue-400) );
-  --col-green-200: hsl( var(--hsl-green-200) );
-  --col-green-300: hsl( var(--hsl-green-300) );
-  --col-green-400: hsl( var(--hsl-green-400) );
-  --col-green-900: hsl( var(--hsl-green-900) );
-  --col-burgundy-400: hsl( var(--hsl-burgundy-400) );
-  --col-grey-200: hsl( var(--hsl-grey-200) );
-  --col-grey-400: hsl( var(--hsl-grey-400) );
-  --hsl-yellow-400: 57 66% 60%;
-  --col-yellow-400: hsl( var(--hsl-yellow-400) );
+  --col-black: #212529;
+  --col-blue-400-hsl: 205 42% 21%;
+  --col-blue-400: hsl(var(--col-blue-400-hsl));
+  --col-blue-900-hsl: 206 42% 15%;
+  --col-blue-900: hsl(var(--col-blue-900-hsl));
+  --col-green-200-hsl: 165 53% 71%;
+  --col-green-200: hsl(var(--col-green-200-hsl));
+  --col-green-300-hsl: 137 37% 73%;
+  --col-green-300: hsl(var(--col-green-300-hsl));
+  --col-green-400-hsl: 155 100% 34%;
+  --col-green-400: hsl(var(--col-green-400-hsl));
+  --col-green-900-hsl: 126 40% 18%;
+  --col-green-900: hsl(var(--col-green-900-hsl));
+  --col-burgundy-400-hsl: 357 52% 27%;
+  --col-burgundy-400: hsl(var(--col-burgundy-400-hsl));
+  --col-grey-200-hsl: 207 24% 93%;
+  --col-grey-200: hsl(var(--col-grey-200-hsl));
+  --col-grey-400-hsl: 207 13% 48%;
+  --col-grey-400: hsl(var(--col-grey-400-hsl));
+  --col-yellow-400-hsl: 57 66% 60%;
+  --col-yellow-400: hsl(var(--col-yellow-400-hsl));
   --fw-300: 300;
   --fw-600: 600;
   --fs-200: 0.79rem;
@@ -5546,7 +5548,7 @@ body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-cont
   body.understrap-no-sidebar .alignfull .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignwide .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-container {
-    max-width: 720px;
+    max-width: 750px;
   }
 }
 @media (min-width: 992px) {
@@ -5554,7 +5556,7 @@ body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-cont
   body.understrap-no-sidebar .alignfull .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignwide .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-container {
-    max-width: 960px;
+    max-width: 970px;
   }
 }
 @media (min-width: 1200px) {
@@ -5562,7 +5564,7 @@ body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-cont
   body.understrap-no-sidebar .alignfull .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignwide .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-container {
-    max-width: 1140px;
+    max-width: 1170px;
   }
 }
 @media (min-width: 1400px) {
@@ -5570,7 +5572,7 @@ body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-cont
   body.understrap-no-sidebar .alignfull .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignwide .wp-block-cover__inner-container,
   body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-container {
-    max-width: 1320px;
+    max-width: 1360px;
   }
 }
 body.understrap-no-sidebar .alignwide,

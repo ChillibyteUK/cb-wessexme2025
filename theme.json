@@ -6,6 +6,12 @@
       "defaultPalette": false,
       "palette": [
         {
+          "name": "black",
+          "slug": "black",
+          "color": "#212529",
+          "origin": "theme"
+        },
+        {
           "name": "blue-400",
           "slug": "blue-400",
           "color": "hsl(205 42% 21%)",
