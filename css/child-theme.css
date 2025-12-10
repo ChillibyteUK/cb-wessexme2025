@@ -21656,8 +21656,9 @@ footer .cb:hover {
 }
 
 .front-hero {
-  --hero-height: 600px;
+  --hero-height: 75svh;
   --margin-bottom: 0;
+  border-bottom: 10px solid var(--col-blue-400);
 }
 
 :not(.front-hero) {
