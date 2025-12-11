@@ -44,7 +44,7 @@ $block_type = get_field( 'type' );
                 }
                 ?>
                 <div class="col-md-3 text-center"><img src="<?= esc_url( wp_get_attachment_image_url( get_sub_field( 'logo' ), 'large' ) ); ?>" alt="" class="logo"></div>
-                <div class="col-md-9"><?= esc_html( get_sub_field( 'description' ) ); ?></div>
+                <div class="col-md-9"><?= wp_kses_post( get_sub_field( 'description' ) ); ?></div>
                 <?php
             }
         } else {
@@ -52,7 +52,7 @@ $block_type = get_field( 'type' );
                 the_row();
                 ?>
                 <div class="col-md-3 text-center"><img src="<?= esc_url( wp_get_attachment_image_url( get_sub_field( 'logo' ), 'large' ) ); ?>" alt="" class="logo"></div>
-                <div class="col-md-9"><?= esc_html( get_sub_field( 'description' ) ); ?></div>
+                <div class="col-md-9"><?= wp_kses_post( get_sub_field( 'description' ) ); ?></div>
                 <?php
             }
         }
