@@ -22217,6 +22217,10 @@ footer .cb:hover {
   right: 1rem;
 }
 
+.admin-bar header.fixed-top {
+  top: 32px;
+}
+
 main {
   margin-top: var(--h-top);
 }
