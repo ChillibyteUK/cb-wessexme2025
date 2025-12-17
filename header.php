@@ -107,7 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 do_action('wp_body_open'); 
 ?>
 <div class="site" id="page">
-    <div id="wrapper-navbar" class="fixed-top">
+    <header id="wrapper-navbar" class="fixed-top">
         <nav id="navbar" class="navbar navbar-expand-md d-block p-0 pt-2 pt-md-0" aria-labelledby="main-nav-label">
             <div class="container-xl mb-2 d-block d-md-flex">
                 <div class="d-flex w-md-auto justify-content-between align-items-center px-2">
@@ -144,4 +144,4 @@ do_action('wp_body_open');
             </div>
 		
         </nav>
-    </div>
+	</header>
