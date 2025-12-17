@@ -21,23 +21,28 @@ $class = $block['className'] ? $block['className'] : 'py-5';
 		?>
         <div class="accreditations__grid">
             <?php
-            $c          = 0;
-            $categories = (array) get_field( 'category' );
+            $c              = 0;
+            $categories     = (array) get_field( 'category' );
+            $has_categories = ! empty( $categories );
+
             while ( have_rows( 'accreditations', 'options' ) ) {
                 the_row();
-                $sub_categories = (array) get_sub_field( 'category' );
 
-                // Check if any sub_field category matches any of the block's categories.
-                $has_match = false;
-                foreach ( $sub_categories as $sub_cat ) {
-                    if ( in_array( $sub_cat, $categories, true ) ) {
-                        $has_match = true;
-                        break;
+                // If categories are selected, filter by them. Otherwise show all.
+                if ( $has_categories ) {
+                    $sub_categories = (array) get_sub_field( 'category' );
+                    $has_match      = false;
+
+                    foreach ( $sub_categories as $sub_cat ) {
+                        if ( in_array( $sub_cat, $categories, true ) ) {
+                            $has_match = true;
+                            break;
+                        }
                     }
-                }
 
-                if ( ! $has_match ) {
-                    continue;
+                    if ( ! $has_match ) {
+                        continue;
+                    }
                 }
 
                 if ( $c > 5 ) {
