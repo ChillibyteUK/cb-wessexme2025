@@ -21567,7 +21567,7 @@ footer .cb:hover {
   border-radius: 0.25rem;
   padding: 1rem;
   position: sticky;
-  top: 1rem;
+  top: var(--h-top);
 }
 .sidebar__grid {
   display: grid;

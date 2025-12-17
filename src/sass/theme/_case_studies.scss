@@ -54,7 +54,7 @@
     border-radius: 0.25rem;
     padding: 1rem;
     position: sticky;
-    top: 1rem;
+    top: var(--h-top);
     &__grid {
         display: grid;
         // grid-template-columns: repeat(2,1fr);
